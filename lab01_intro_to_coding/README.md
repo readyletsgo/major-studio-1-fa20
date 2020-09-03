@@ -13,13 +13,13 @@
 
 ##### Getting started in AWS Cloud9
 
-Go to `https://us-east-1.console.aws.amazon.com/cloud9` and log in with your email and password under account `msdv`.
+Go to `https://us-east-2.console.aws.amazon.com/cloud9` and log in with your email and password under account `msdv`.
 
 Create a new environment using all the default settings, then clone this repo by running `git clone https://github.com/anbnyc/major-studio-1-fa19.git`.
 
 ##### Completing the exercises
 
-Open the `exercises` directory and work through the exercises on your own or with a partner.
+Open the `exercises` directory and work through the exercises with a partner.
 
 ##### Saving your work
 
