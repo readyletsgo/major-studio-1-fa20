@@ -15,7 +15,7 @@
 
 Go to `https://us-east-2.console.aws.amazon.com/cloud9` and log in with your email and password under account `msdv`.
 
-Create a new environment using all the default settings, then clone this repo by running `git clone https://github.com/anbnyc/major-studio-1-fa19.git`.
+Create a new environment using all the default settings, then clone this repo by running `git clone https://github.com/readyletsgo/major-studio-1-fa20.git`.
 
 ##### Completing the exercises
 
