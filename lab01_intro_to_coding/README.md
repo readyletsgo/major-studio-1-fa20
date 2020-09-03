@@ -13,7 +13,7 @@
 
 ##### Getting started in AWS Cloud9
 
-Go to `https://us-east-2.console.aws.amazon.com/cloud9`. Select IAM User and log in with your email and password under account `msdv`.
+Go to [https://msdv.signin.aws.amazon.com/console](https://msdv.signin.aws.amazon.com/console). Select IAM User and log in with your email and password under account `msdv`.
 
 Create a new environment using all the default settings, then clone this repo by running `git clone https://github.com/readyletsgo/major-studio-1-fa20.git`.
 
