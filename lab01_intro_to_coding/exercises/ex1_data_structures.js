@@ -36,6 +36,8 @@ console.log(/* COMPLETE ME */)
 console.log(/* COMPLETE ME */)
 console.log(/* COMPLETE ME */)
 
+
+
 // Task 2
 // add a new item to an array
 var newName = "The International Center of Photography"
