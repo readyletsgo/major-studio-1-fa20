@@ -7,7 +7,7 @@ var schoolName = "Parsons";
 var schoolYear = 1936;
 
 // Task
-// What is the value of test3?
+// What is the value of test3? 
 var test1;
 if (1 == true) {
   test1 = true;
@@ -23,24 +23,34 @@ if (1 === true) {
 }
 
 var test3 = test1 === test2;
+// var test3 = false
+
 
 // Task
 // Change this code so test4 is false and test5 is true. Use console.log() to confirm your cod works.
 
-var test4 = 0 == "";
-var test5 = 1 === "1";
+var test4 = 0 === "";
+var test5 = 1 === 1;
 
 console.log("test4 is", test4, "and test 5 is", test5);
 
 // Task
 // What are the values of p, q, and r? Research what is going on here.
+
 var w = 0.1;
+
 var x = 0.2;
+
 var y = 0.4;
+
 var z = 0.5;
 
-var p = w + x;
+function numObj(x) {
+  return Number.parseFloat(x).toFixed(1);
+}
 
-var q = z - x;
+var p = numObj(w + x); 
 
-var r = y - w;
+var q = numObj(z - x);
+
+var r = numObj(y - w);
