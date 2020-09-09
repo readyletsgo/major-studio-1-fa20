@@ -1,7 +1,5 @@
 // importing necessary packages
 // npm init
-// npm install express
-// npm install nodemon & add "watch": "nodemon index.js" in scripts after test in package.json
 const express = require('express')
 const fs = require('fs')
 
