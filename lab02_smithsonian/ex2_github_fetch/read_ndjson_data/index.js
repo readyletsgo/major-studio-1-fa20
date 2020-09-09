@@ -15,6 +15,7 @@ const port = 3000
 app.listen(port, () => console.log("listening on port 3000"))
 
 // changing ndjson files to json
+// https://github.com/madnight/ndjson-to-json
 function ndjsonToJson(filename, res) {
   fs.readFile(filename, function (err, ndjsonData) {
     if (err) {
