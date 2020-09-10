@@ -22,22 +22,22 @@ Example ID: edanmdm:NMAI_270941
 
  ---
 ## API Example 2: Fetch terms
-Retrieve terms according to their term category
-Term Base URL: https://api.si.edu/openaccess/api/v1.0/terms/
+Retrieve terms according to their term category  
+Term Base URL: https://api.si.edu/openaccess/api/v1.0/terms/  
 Example Term: online_media_type
  
  ---
 
 ## API Example 3: Fetch search
 Use a search term to query the API
-Search Base URL: https://api.si.edu/openaccess/api/v1.0/search
-Example Search: mask
+Search Base URL: https://api.si.edu/openaccess/api/v1.0/search  
+Example Search: mask  
 
  ---
 
 
 ### API Example 4: Fetch search & create data set
-Fetch data and write only the most important pieces into your own custom array
+Fetch data and write only the most important pieces into your own custom array  
 
 ## Relevant resources
 [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
