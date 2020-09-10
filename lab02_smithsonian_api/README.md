@@ -8,6 +8,9 @@ Web-based search interface for the collection.
 [https://edan.si.edu/openaccess/apidocs/](https://edan.si.edu/openaccess/apidocs/)
 Documentation for the API.
 
+**API Key**  
+qEIgONMDA9l4wPFA864Vvldpm2tfKzD2LJtAELFK  
+?api_key=qEIgONMDA9l4wPFA864Vvldpm2tfKzD2LJtAELFK
 
  ---
 
