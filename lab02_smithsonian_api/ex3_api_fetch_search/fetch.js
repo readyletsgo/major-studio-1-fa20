@@ -8,7 +8,7 @@ const apiKey = "";
 const searchBaseURL = "https://api.si.edu/openaccess/api/v1.0/search";
 
 // Constructing the search query
-const search =  `mask AND unit_code:"FSG"` + "&start=" + 0 + "&rows=" + 50;
+const search =  `mask AND unit_code:"FSG"` + "&start=" + 0 + "&rows=" + 81;
 
 
 // search: fetches an array of terms based on term category

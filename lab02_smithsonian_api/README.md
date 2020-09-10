@@ -8,10 +8,6 @@ Web-based search interface for the collection.
 [https://edan.si.edu/openaccess/apidocs/](https://edan.si.edu/openaccess/apidocs/)
 Documentation for the API.
 
-**API Key**  
-qEIgONMDA9l4wPFA864Vvldpm2tfKzD2LJtAELFK  
-?api_key=qEIgONMDA9l4wPFA864Vvldpm2tfKzD2LJtAELFK
-
  ---
 
 ## API Example 1: Fetch objects
@@ -41,4 +37,5 @@ Fetch data and write only the most important pieces into your own custom array
 
 ## Relevant resources
 [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+
 
