@@ -9,20 +9,28 @@ Web-based search interface for the collection.
 Documentation for the API.
 
 
-## Labs
-We have 4 small labs that show how to use the Smithsonian API.
+ ---
 
-
-### API Example 1: Fetch objects
+## API Example 1: Fetch objects
 Use the api to fetch objects by their id
-  
 
-### API Example 2: Fetch terms
+Content Base URL: https://api.si.edu/openaccess/api/v1.0/content/  
+Example ID: edanmdm:NMAI_270941
+
+ ---
+## API Example 2: Fetch terms
 Retrieve terms according to their term category
+Term Base URL: https://api.si.edu/openaccess/api/v1.0/terms/
+Example Term: online_media_type
+ 
+ ---
 
-
-### API Example 3: Fetch search
+## API Example 3: Fetch search
 Use a search term to query the API
+Search Base URL: https://api.si.edu/openaccess/api/v1.0/search
+Example Search: mask
+
+ ---
 
 
 ### API Example 4: Fetch search & create data set
