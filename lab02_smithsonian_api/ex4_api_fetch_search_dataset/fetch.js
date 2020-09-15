@@ -7,11 +7,14 @@ const apiKey = "";
 // search base URL
 const searchBaseURL = "https://api.si.edu/openaccess/api/v1.0/search";
 
-// Constructing the search query
-const search =  `mask AND unit_code:"FSG"` + "&start=" + 0 + "&rows=" + 50;
+// constructing the initial search query
+const search =  'mask AND unit_code:"FSG"';
 
 // array that we will write into
 let myArray = [];
+
+// string that will hold the stringified JSON data
+let jsonString = '';
 
 // search: fetches an array of terms based on term category
 function fetchSearchData(searchTerm) {
@@ -21,16 +24,38 @@ function fetchSearchData(searchTerm) {
     .fetch(url)
     .then(res => res.json())
     .then(data => {
+      console.log(data)
 
-      data.response.rows.forEach(function(n) {
-      addObject(n);
-      })
+      // constructing second search query to get all the rows of data
+      let searchAllURL = url + `&start=0&rows=${data.response.rowCount}`;
+      console.log(searchAllURL);
+      searchAllData(searchAllURL);
     })
     .catch(error => {
       console.log(error);
     })
 }
 
+// fetching all the data listed under our search and pushing them all into our custom array
+function searchAllData(url) {
+  console.log(url)
+  window
+  .fetch(url)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+
+    data.response.rows.forEach(function(n) {
+      addObject(n);
+    });
+
+    combineJSON(myArray)
+  })
+  .catch(error => {
+    console.log(error)
+  })
+
+}
 
 // create your own array with just the data you need
 function addObject(objectData) {
@@ -44,6 +69,57 @@ function addObject(objectData) {
   myArray[index]["id"] = currentID;
   myArray[index]["link"] = objectLink;
   console.log("object at index", index, myArray[index]);
+  console.log(myArray);
+}
+
+
+// get objects from myArray and add them into one JSON object
+function combineJSON(myArray) {
+  let results = {};
+  for (let i = 0; i < myArray.length; i++) {
+    
+    // keys - indices, values - each object
+    results[i] = myArray[i];   
+  }
+  
+  // stringify our JSON object and add to our empty string defined above
+  jsonString += JSON.stringify(results);
 }
 
 fetchSearchData(search);
+
+
+//---------------------------UNIT CODES------------------------------
+// ACAH: Archives Center, National Museum of American History
+// ACM: Anacostia Community Museum
+// CFCHFOLKLIFE: Smithsonian Center for Folklife and Cultural Heritage
+// CHNDM: Cooper-Hewitt, National Design Museum
+// FBR: Smithsonian Field Book Project
+// FSA: Freer Gallery of Art and Arthur M. Sackler Gallery Archives
+// FSG: Freer Gallery of Art and Arthur M. Sackler Gallery
+// HAC: Smithsonian Gardens
+// HMSG: Hirshhorn Museum and Sculpture Garden
+// HSFA: Human Studies Film Archives
+// NAA: National Anthropological Archives
+// NASM: National Air and Space Museum
+// NMAAHC: National Museum of African American History and Culture
+// NMAfA: Smithsonian National Museum of African Art
+// NMAH: Smithsonian National Museum of American History
+// NMAI: National Museum of the American Indian
+// NMNHANTHRO: NMNH - Anthropology Dept.
+// NMNHBIRDS: NMNH - Vertebrate Zoology - Birds Division
+// NMNHBOTANY: NMNH - Botany Dept.
+// NMNHEDUCATION: NMNH - Education & Outreach
+// NMNHENTO: NMNH - Entomology Dept.
+// NMNHFISHES: NMNH - Vertebrate Zoology - Fishes Division
+// NMNHHERPS: NMNH - Vertebrate Zoology - Herpetology Division
+// NMNHINV: NMNH - Invertebrate Zoology Dept.
+// NMNHMAMMALS: NMNH - Vertebrate Zoology - Mammals Division
+// NMNHMINSCI: NMNH - Mineral Sciences Dept.
+// NMNHPALEO: NMNH - Paleobiology Dept.
+// NPG: National Portrait Gallery
+// NPM: National Postal Museum
+// SAAM: Smithsonian American Art Museum
+// SI: Smithsonian Institution, Digitization Program Office
+// SIA: Smithsonian Institution Archives
+// SIL: Smithsonian Libraries
