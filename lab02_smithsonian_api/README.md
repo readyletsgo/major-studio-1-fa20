@@ -32,10 +32,10 @@ Example Search: mask
  ---
 
 
-### API Example 4: Fetch search & create data set
+### API Example 4: Fetch search & create data set and make it downloadable
 Fetch data and write only the most important pieces into your own custom array  
 
 ## Relevant resources
 [Using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
-
+[Download data button](https://ourcodeworld.com/articles/read/189/how-to-create-a-file-and-generate-a-download-with-javascript-in-the-browser-without-a-server)
 

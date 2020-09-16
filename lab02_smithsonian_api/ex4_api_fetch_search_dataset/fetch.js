@@ -1,5 +1,6 @@
 // Smithsonian API example code
 // check API documentation for search here: http://edan.si.edu/openaccess/apidocs/#api-search-search
+// Using this data set https://collections.si.edu/search/results.htm?q=Flowers&view=grid&fq=data_source%3A%22Cooper+Hewitt%2C+Smithsonian+Design+Museum%22&fq=online_media_type%3A%22Images%22&media.CC0=true&fq=object_type:%22Embroidery+%28visual+works%29%22
 
 // put your API key here;
 const apiKey = "";  
@@ -10,6 +11,7 @@ const searchBaseURL = "https://api.si.edu/openaccess/api/v1.0/search";
 // constructing the initial search query
 // const search =  'mask AND unit_code:"FSG"';
 const search =  `Flowers AND unit_code:"CHNDM" AND object_type:"Embroidery (visual works)" AND online_media_type:"Images"`;
+
 
 // array that we will write into
 let myArray = [];
@@ -30,6 +32,8 @@ function fetchSearchData(searchTerm) {
       // constructing second search query to get all the rows of data
       // The max here is 1000 rows
       let searchAllURL = url + `&start=0&rows=${data.response.rowCount}`;
+      // let searchAllURL = url + `&start=0&rows=40`;
+      
       console.log(searchAllURL);
       fetchAllData(searchAllURL);
     })
@@ -50,8 +54,8 @@ function fetchAllData(url) {
     data.response.rows.forEach(function(n) {
       addObject(n);
     });
-
-    combineJSON(myArray)
+    jsonString += JSON.stringify(myArray);
+    console.log(myArray.toString());
   })
   .catch(error => {
     console.log(error)
@@ -60,35 +64,22 @@ function fetchAllData(url) {
 }
 
 // create your own array with just the data you need
-function addObject(objectData) {
-  let currentID = objectData.id;
-  let currentTitle = objectData.title;
-  let objectLink = objectData.content.descriptiveNonRepeating.record_link;
-  let currentDate = objectData.content.freetext.date[0]["content"];
-
-  let index = myArray.length;
-  myArray[index] = {};
-  myArray[index]["title"] = currentTitle;
-  myArray[index]["id"] = currentID;
-  myArray[index]["link"] = objectLink;
-  myArray[index]["date"] = currentDate;
-  console.log("object at index", index, myArray[index]);
+function addObject(objectData) {  
   
-}
-
-
-// get objects from myArray and add them into one JSON object
-function combineJSON(myArray) {
-  let results = {};
-  for (let i = 0; i < myArray.length; i++) {
-    
-    // keys - indices, values - each object
-    results[i] = myArray[i];   
+  // we've encountered that some places have data others don't
+  let currentPlace = "";
+  if(objectData.content.indexedStructured.place) {
+    currentPlace = objectData.content.indexedStructured.place[0];
   }
-  
-  // stringify our JSON object and add to our empty string defined above
-  jsonString += JSON.stringify(results);
+
+  myArray.push({
+    id: objectData.id,
+    title: objectData.title,
+    link: objectData.content.descriptiveNonRepeating.record_link,
+    place: currentPlace
+  })
 }
+
 
 fetchSearchData(search);
 
