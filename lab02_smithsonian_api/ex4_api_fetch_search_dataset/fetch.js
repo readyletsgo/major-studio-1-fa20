@@ -8,7 +8,8 @@ const apiKey = "";
 const searchBaseURL = "https://api.si.edu/openaccess/api/v1.0/search";
 
 // constructing the initial search query
-const search =  'mask AND unit_code:"FSG"';
+// const search =  'mask AND unit_code:"FSG"';
+const search =  `Flowers AND unit_code:"CHNDM" AND object_type:"Embroidery (visual works)" AND online_media_type:"Images"`;
 
 // array that we will write into
 let myArray = [];
@@ -27,9 +28,10 @@ function fetchSearchData(searchTerm) {
       console.log(data)
 
       // constructing second search query to get all the rows of data
+      // The max here is 1000 rows
       let searchAllURL = url + `&start=0&rows=${data.response.rowCount}`;
       console.log(searchAllURL);
-      searchAllData(searchAllURL);
+      fetchAllData(searchAllURL);
     })
     .catch(error => {
       console.log(error);
@@ -37,7 +39,7 @@ function fetchSearchData(searchTerm) {
 }
 
 // fetching all the data listed under our search and pushing them all into our custom array
-function searchAllData(url) {
+function fetchAllData(url) {
   console.log(url)
   window
   .fetch(url)
@@ -59,17 +61,19 @@ function searchAllData(url) {
 
 // create your own array with just the data you need
 function addObject(objectData) {
-  var currentID = objectData.id;
-  var currentTitle = objectData.title;
-  var objectLink = objectData.content.descriptiveNonRepeating.record_link;
-  var index = myArray.length;
-  
+  let currentID = objectData.id;
+  let currentTitle = objectData.title;
+  let objectLink = objectData.content.descriptiveNonRepeating.record_link;
+  let currentDate = objectData.content.freetext.date[0]["content"];
+
+  let index = myArray.length;
   myArray[index] = {};
   myArray[index]["title"] = currentTitle;
   myArray[index]["id"] = currentID;
   myArray[index]["link"] = objectLink;
+  myArray[index]["date"] = currentDate;
   console.log("object at index", index, myArray[index]);
-  console.log(myArray);
+  
 }
 
 

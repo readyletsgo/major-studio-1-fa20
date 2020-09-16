@@ -8,7 +8,10 @@ const apiKey = "";
 const searchBaseURL = "https://api.si.edu/openaccess/api/v1.0/search";
 
 // Constructing the search query
-const search =  `mask AND unit_code:"FSG"` + "&start=" + 0 + "&rows=" + 81;
+const search =  `Flowers AND unit_code:"CHNDM" AND object_type:"Embroidery (visual works)" AND online_media_type:"Images"`;
+
+
+// https://collections.si.edu/search/results.htm?q=Flowers&view=grid&fq=data_source%3A%22Cooper+Hewitt%2C+Smithsonian+Design+Museum%22&fq=online_media_type%3A%22Images%22&media.CC0=true&fq=object_type:%22Embroidery+%28visual+works%29%22
 
 
 // search: fetches an array of terms based on term category
