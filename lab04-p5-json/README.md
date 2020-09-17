@@ -8,11 +8,11 @@
 - Drawing a bar graph in P5
 
 #### In general:
-https://p5js.org/
+https://p5js.org/  
 
 #### Loading data in p5
-https://p5js.org/reference/#/p5/loadJSON
-https://p5js.org/reference/#/p5/loadTable  
+https://p5js.org/reference/#/p5/loadJSON  
+https://p5js.org/reference/#/p5/loadTable    
 https://p5js.org/reference/#/p5.Table  
 
 #### Coordinate system in P5
@@ -20,8 +20,8 @@ https://p5js.org/learn/coordinate-system-and-shapes.html
 http://genekogan.com/code/p5js-transformations/  
 
 #### Map function
-https://p5js.org/reference/#/p5/map
+https://p5js.org/reference/#/p5/map  
 
 #### More examples
-https://creative-coding.decontextualize.com/csv-files/  
-http://www.generative-gestaltung.de/2/
+https://creative-coding.decontextualize.com/csv-files/   
+http://www.generative-gestaltung.de/2/  
