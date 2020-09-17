@@ -14,6 +14,7 @@ function setup() {
   console.log("hello world");
   analyzeData();
   displayData();
+  addLabel();
 }
 
 function analyzeData(){  
@@ -76,6 +77,20 @@ function displayData(){
   	pop();   
   }
 }
+function addLabel(){
+// 3. Let's add the overall title
+textStyle(BOLD);
+noStroke();
+textAlign(LEFT);
+textSize(20);
+fill(0);
+text("Flowers in Embroidery by Country", margin,margin-80);
+textSize(10);
+textStyle(NORMAL);
+text("At the Cooper Hewitt Collection", margin,margin-60);
+}
+
+
 
 /*
 Tasks:
