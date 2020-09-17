@@ -55,7 +55,7 @@ function fetchAllData(url) {
       addObject(n);
     });
     jsonString += JSON.stringify(myArray);
-    console.log(myArray.toString());
+    // console.log(myArray.toString());
   })
   .catch(error => {
     console.log(error)
