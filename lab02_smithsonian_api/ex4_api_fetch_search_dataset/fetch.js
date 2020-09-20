@@ -28,14 +28,23 @@ function fetchSearchData(searchTerm) {
     .then(res => res.json())
     .then(data => {
       console.log(data)
-
-      // constructing second search query to get all the rows of data
-      // The max here is 1000 rows
-      let searchAllURL = url + `&start=0&rows=${data.response.rowCount}`;
-      // let searchAllURL = url + `&start=0&rows=40`;
       
-      console.log(searchAllURL);
-      fetchAllData(searchAllURL);
+      // constructing search queries to get all the rows of data
+      // you can change the page size
+      let pageSize = 1000;
+      let numberOfQueries = Math.ceil(data.response.rowCount / pageSize);
+      console.log(numberOfQueries)
+      for(let i = 0; i < numberOfQueries; i++) {
+        // making sure that our last query calls for the exact number of rows
+        if (i == (numberOfQueries - 1)) {
+          searchAllURL = url + `&start=${i * pageSize}&rows=${data.response.rowCount - (i * pageSize)}`;
+        } else {
+          searchAllURL = url + `&start=${i * pageSize}&rows=${pageSize}`;
+        }
+        console.log(searchAllURL)
+        fetchAllData(searchAllURL);
+      
+      }
     })
     .catch(error => {
       console.log(error);
@@ -44,7 +53,6 @@ function fetchSearchData(searchTerm) {
 
 // fetching all the data listed under our search and pushing them all into our custom array
 function fetchAllData(url) {
-  console.log(url)
   window
   .fetch(url)
   .then(res => res.json())
@@ -55,7 +63,7 @@ function fetchAllData(url) {
       addObject(n);
     });
     jsonString += JSON.stringify(myArray);
-    // console.log(myArray.toString());
+    console.log(myArray);
   })
   .catch(error => {
     console.log(error)
