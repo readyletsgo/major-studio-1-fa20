@@ -20,7 +20,9 @@ Walk-through Mike Bostock's [Let's Make A Bar](https://observablehq.com/@d3/lets
 
 
 ---  
-### Required follow-up reading:
+### Follow up reading
+
+## Required
 - D3 Concepts
     - [D3 In Depth: Data Joins](https://www.d3indepth.com/datajoins/)
     - [Data joins: Update with D3@5](https://observablehq.com/@d3/selection-join) 
@@ -28,5 +30,10 @@ Walk-through Mike Bostock's [Let's Make A Bar](https://observablehq.com/@d3/lets
     - [Margin convention](https://observablehq.com/@d3/margin-convention)
     - [D3 Introduction on Observable](https://observablehq.com/collection/@d3/learn-d3)
     - [Official D3 Project Page](https://d3js.org/)
-
+## Optional
+- [JavaScript array methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype)reference
+- [d3-selection](https://github.com/d3/d3-selection) API reference
+- [d3-scale](https://github.com/d3/d3-scale) API reference
+- Tutorial on [D3 Scales and Color](http://www.jeromecukier.net/2011/08/11/d3-scales-and-color/) by Jerome Cukier
+- Textbook: D3: [Interactive Data Visualization for the Web](https://clio.columbia.edu/catalog/13137514) 2nd ed., Scott Murray, O’Reilly (2017)
 
