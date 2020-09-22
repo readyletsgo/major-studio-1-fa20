@@ -31,7 +31,7 @@ Walk-through Mike Bostock's [Let's Make A Bar](https://observablehq.com/@d3/lets
     - [D3 Introduction on Observable](https://observablehq.com/collection/@d3/learn-d3)
     - [Official D3 Project Page](https://d3js.org/)
 ### Optional
-- [JavaScript array methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype)reference
+- [JavaScript array methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype) reference
 - [d3-selection](https://github.com/d3/d3-selection) API reference
 - [d3-scale](https://github.com/d3/d3-scale) API reference
 - Tutorial on [D3 Scales and Color](http://www.jeromecukier.net/2011/08/11/d3-scales-and-color/) by Jerome Cukier
