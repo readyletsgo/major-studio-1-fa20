@@ -1,6 +1,6 @@
 ### Major Studio 1 - Lab 5: SVG, D3
 
-## Example 1: SVG Primer
+## [Example 1: SVG Primer](https://readyletsgo.github.io/major-studio-1-fa20/lab05-d3-json/01_svg_primer/)
 Show different ways of using svg
 
 ---  
