@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Primer</title>
+<style>
+body{
+    background-color:#CCC;
+    color:#55555;
+    font-family: Arial, Helvetica, sans-serif;
+    margin:50px;
+}
+svg{
+    background-color:white;
+    margin-bottom: 80px;
+}
+
+</style>
+</head>
+<body>
+    <h1>SVG Primer</h1>
+    A few examples of SVG in one website. For a lot more info look at <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Introduction">Introduction - SVG: Scalable Vector Graphics | MDN</a>
+    <h2>Canvas</h2>    
+    <!-- Just an empty canvas -->
+    <svg width="100" height="100" >
+    </svg>
+    <h2>Basic shapes</h2>
+    <!-- Drawing basic shapes -->    
+    <svg width="600" height="250">
+        <rect x="5" y="5" width="500" height="50"/>
+        <circle cx="250" cy="100" r="25"/>
+        <ellipse cx="250" cy="160" rx="100" ry="25"/>
+        <line x1="0" y1="200" x2="500" y2="250" stroke="black"/>
+
+
+        <path transform="translate(60,150)" d="M 0,0 C -10,-10 -10,-40 0,-50 C 10,-40 10,-10 0,0">
+      </svg>
+      <h2>Styling SVG</h2> 
+      <svg width="100" height="100">
+          <!-- Styling the shapes: fill, stroke, stroke-width -->    
+        <rect width="100%" height="100%" fill="white" /> 
+        <circle cx="50" cy="50" r="22" fill="blue" stroke="gray" stroke-width="2"/>
+    </svg>
+    <h2>Text</h2>
+    <svg width="350" height="100">
+        <!-- plain text -->
+        <text x="50" y="25">Easy-peasy</text>
+        <!-- styled text -->
+        <text x="150" y="25" font-family="serif" font-size="25" fill="gray">Easy-peasy</text>
+        <!-- writing off canvas -->
+        <text x="250" y="50" font-family="serif" font-size="25" fill="gray">Easy-peasy</text>
+    </svg>
+    <h2>Layering</h2>
+    <svg width="350" height="100">
+        <rect x="0" y="0" width="60" height="60" fill="purple"/>
+        <rect x="20" y="5" width="60" height="60" fill="blue"/>
+        <rect x="40" y="10" width="60" height="60" fill="green"/>
+        <rect x="60" y="15" width="60" height="60" fill="yellow"/>
+        <rect x="80" y="20" width="60" height="60" fill="red"/>
+      </svg>
+      <h2>Imported SVG</h2>
+      <object width="300px" data="noun_Dog_1724072.svg" type="image/svg+xml">
+      </object>
+    </body>
+</html>
