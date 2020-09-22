@@ -15,7 +15,7 @@ Show different ways of using svg
 Using a json file created using the Smithsonian API to create a D3 bar graph using scales, margins and axes
 
 ---  
-## Example 4: Putting it all together
+## 04: Putting it all together
 Walk-through Mike Bostock's [Let's Make A Bar](https://observablehq.com/@d3/lets-make-a-bar-chart?collection=@d3/lets-make-a-bar-chart) Chart tutorial.
 
 
