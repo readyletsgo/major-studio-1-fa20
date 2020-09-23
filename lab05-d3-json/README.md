@@ -14,7 +14,7 @@ Show different ways of using svg
 
 
 ---  
-## [03: D3 Smithsonian API](https://readyletsgo.github.io/major-studio-1-fa20/lab05-d3-json/03_d3_smithsonian)
+## [03: D3 Smithsonian data](https://readyletsgo.github.io/major-studio-1-fa20/lab05-d3-json/03_d3_smithsonian)
 Using a json file created using the Smithsonian API to create a D3 bar graph using scales, margins and axes  
 [D3.js essential training: Parsing Json](https://www.linkedin.com/learning/d3-js-essential-training-for-data-scientists/parsing-json?contextUrn=urn%3Ali%3AlearningCollection%3A6668921134999728128&u=75880858)
 
