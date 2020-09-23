@@ -1,18 +1,22 @@
 ### Major Studio 1 - Lab 5: SVG, D3
 
 ## [01: SVG Primer](https://readyletsgo.github.io/major-studio-1-fa20/lab05-d3-json/01_svg_primer/)
-Show different ways of using svg
+Show different ways of using svg  
+[D3.js essential training: Introducing SVG](https://www.linkedin.com/learning/d3-js-essential-training-for-data-scientists/introducing-svg?contextUrn=urn%3Ali%3AlearningCollection%3A6668921134999728128&u=75880858)
 
 ---  
 ## [02: D3 SVG data join example](https://readyletsgo.github.io/major-studio-1-fa20/lab05-d3-json/02_d3_svg/)
 - Draw SVG graphics using D3
 - Using data to create the graphics using D3
-- Introducing scales and margins
+- Introducing scales and margins  
+[D3.js essential training: Introducing scales](https://www.linkedin.com/learning/d3-js-essential-training-for-data-scientists/introducing-scales?contextUrn=urn%3Ali%3AlearningCollection%3A6668921134999728128&u=75880858)
+
 
 
 ---  
 ## [03: D3 Smithsonian API](https://readyletsgo.github.io/major-studio-1-fa20/lab05-d3-json/03_d3_smithsonian)
-Using a json file created using the Smithsonian API to create a D3 bar graph using scales, margins and axes
+Using a json file created using the Smithsonian API to create a D3 bar graph using scales, margins and axes  
+[D3.js essential training: Parsing Json](https://www.linkedin.com/learning/d3-js-essential-training-for-data-scientists/parsing-json?contextUrn=urn%3Ali%3AlearningCollection%3A6668921134999728128&u=75880858)
 
 ---  
 ## 04: Putting it all together
