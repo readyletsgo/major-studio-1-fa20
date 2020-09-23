@@ -26,14 +26,18 @@ Walk-through Mike Bostock's [Let's Make A Bar](https://observablehq.com/@d3/lets
 ---  
 ## Follow up reading
 
-### Required
+
+- Documentation:
+    - [Official D3 Project Page](https://d3js.org/)
+    - [MDN SVG Tutorial](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial)
 - D3 Concepts
+    - [Linkedin: D3 Essential training](https://www.linkedin.com/learning/d3-js-essential-training-for-data-scientists/welcome?u=75880858)
+     - [D3 Introduction on Observable](https://observablehq.com/collection/@d3/learn-d3)
     - [D3 In Depth: Data Joins](https://www.d3indepth.com/datajoins/)
     - [Data joins: Update with D3@5](https://observablehq.com/@d3/selection-join) 
     - [D3 In Depth: Scales](https://www.d3indepth.com/scales/)
     - [Margin convention](https://observablehq.com/@d3/margin-convention)
-    - [D3 Introduction on Observable](https://observablehq.com/collection/@d3/learn-d3)
-    - [Official D3 Project Page](https://d3js.org/)
+    
 ### Optional
 - [JavaScript array methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype) reference
 - [d3-selection](https://github.com/d3/d3-selection) API reference
