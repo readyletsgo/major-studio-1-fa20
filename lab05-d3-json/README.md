@@ -27,6 +27,7 @@ Walk-through Mike Bostock's [Let's Make A Bar](https://observablehq.com/@d3/lets
     - [Official D3 Project Page](https://d3js.org/)
     - [MDN SVG Tutorial](https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial)
 - D3 Concepts
+    - [Tifffany: Build your first data viz](https://www.pluralsight.com/courses/build-your-first-data-visualization-d3)
     - [Linkedin: D3 Essential training](https://www.linkedin.com/learning/d3-js-essential-training-for-data-scientists/welcome?u=75880858)
      - [D3 Introduction on Observable](https://observablehq.com/collection/@d3/learn-d3)
     - [D3 In Depth: Data Joins](https://www.d3indepth.com/datajoins/)
