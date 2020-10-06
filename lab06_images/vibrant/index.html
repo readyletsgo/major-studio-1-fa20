@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Vibrant.js example</title>
+<script src="libraries/vibrant.js"></script>
+<style>
+/* Style for the swatches & image */
+  .swatch {
+    border: 5px black;
+    height:100px;
+    width:100px;
+    float:left;
+  }
+  img{
+    width:600px;
+  }
+
+</style>
+</head>
+<body>
+<img src = "assets/VanGogh-OliveTrees.jpg" />
+<div id="palette_container"></div>
+</body>
+</html>
+
+<script>
+  // Use `Vibrant` in script
+  // Vibrant is exported to global. window.Vibrant === Vibrant
+  Vibrant.from('assets/VanGogh-OliveTrees.jpg').getPalette(function(err, palette) {
+
+    for (var swatch in palette){
+      console.log(swatch, palette[swatch].getHex());
+
+      const div = document.createElement("div");
+      div.className = 'swatch';
+      div.style.backgroundColor = palette[swatch].getHex();
+      var element = document.getElementById("palette_container");
+      element.appendChild(div);
+    }
+  });
+</script>

@@ -10,7 +10,7 @@ d3.json('data/data-caratWeight.json').then(function(data){
 
   // Define the bins
   // we're having a cut-off at carathweight 100 and defining the number of bins at 17
-  let bin = d3.bin().domain([0, 100]).thresholds(17);
+  let bin = d3.bin().domain([0, 200]).thresholds(30);
 
   bins = bin(caratWeights);
 
