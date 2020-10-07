@@ -83,9 +83,8 @@ function fetchUrl(searchAllURL){
 
     myArray.push(objects);
     // if there are more objects than the pageSize myArray will look like this: [[...objects], [...objects]]
-    // we use .flat() to flatten out myArray to be a one-dimensional array
-    myArray.concat(...myArray);
-
+    // we use [].concat to flatten out myArray to be a one-dimensional array
+    myArray = [].concat(...myArray);
   });
 }
 
