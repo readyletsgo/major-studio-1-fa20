@@ -18,17 +18,12 @@ function displayImages(json){
     // images to be added
     let app  = d3.select('#app').text('');
 
-    // defining two different directions
-    // our "date" field could be sorted by
-    let descending = (a,b) => {
-        return b.date - a.date;
-    }
-    let ascending = (a,b) => {
-        return a.date - b.date;
-    }
-
     // take our JSON and sort it
-    let data = json.sort( (a,b)=>descending(a,b) );
+    // date descending
+    let data = json.sort( (a,b) => (b.date > a.date) ? 1 : -1 );
+    // // date ascending
+    // let data = json.sort( (a,b) => (a.date > b.date) ? 1 : -1 );
+
 
     // define "cards" for each item
     let card = app.selectAll('div.smithsonian-card')
