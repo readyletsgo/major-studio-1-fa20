@@ -68,14 +68,14 @@ function fetchUrl(searchAllURL){
     // first we filter out the objects that do not have the information we need (change accordingly)
     // after the objects are filtered, we map our objects and construct a new object
     let objects = obj.response.rows.filter(data => {
-      return data.content.descriptiveNonRepeating.online_media.media[0].resources != undefined && data.content.freetext.date != undefined
+      return data.content.descriptiveNonRepeating.online_media.media[0].resources != undefined && data.content.indexedStructured.date != undefined
     }).map((data) => {
       let filename = data.content.descriptiveNonRepeating.online_media.media[0].resources[1].url.split('=').pop();
 
       return { 
         objectID: data.id,
         title: data.title,
-        date: data.content.freetext.date[0].content,
+        date: data.content.indexedStructured.date[0],
         primaryImage: data.content.descriptiveNonRepeating.online_media.media[0].resources[1].url,
         filename: filename.includes(".jpg") ? filename : filename + ".jpg" // if the filename we defined above doesn't include .jpg add it at the end
       }
@@ -84,7 +84,7 @@ function fetchUrl(searchAllURL){
     myArray.push(objects);
     // if there are more objects than the pageSize myArray will look like this: [[...objects], [...objects]]
     // we use .flat() to flatten out myArray to be a one-dimensional array
-    // myArray = myArray.flat();
+    myArray.concat(...myArray);
 
   });
 }
