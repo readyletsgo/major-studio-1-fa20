@@ -31,10 +31,10 @@ function displayImages(json){
     let data = json.sort( (a,b)=>descending(a,b) );
 
     // define "cards" for each item
-    let card = app.selectAll('div.met-card')
+    let card = app.selectAll('div.smithsonian-card')
                 .data(data)
                 .join('div')
-                .attr('class', 'met-card');
+                .attr('class', 'smithsonian-card');
 
     // create a div with a class of "image"
     // and populate it with an <img/> tag
