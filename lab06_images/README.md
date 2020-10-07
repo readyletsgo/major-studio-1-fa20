@@ -3,6 +3,7 @@
 #### Topics
 - Downloading images from the API and preparing your json file
 - Displaying images and data from json in P5
+- Displaying images and data from json in D3
 - Using Vibrant.js
 
 #### Further Reading

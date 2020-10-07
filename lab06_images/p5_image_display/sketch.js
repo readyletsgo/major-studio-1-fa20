@@ -1,5 +1,5 @@
 let smithsonian_data;
-let img_width = 80;
+let img_width = 70;
 let margin = 5;
 let images = [];
 let folder = "images";
@@ -33,10 +33,11 @@ function drawImages() {
   background(0);
   fill(255);
   textSize(8);
-
+  let ratio = 1.0;
   for(var i=0; i<smithsonian_data.length; i++){
-      image(images[i],i*20,i*20);
-      text(smithsonian_data[i].title, i*20,i*20);
+      let ratio = images[i].height/images[i].width;      
+      image(images[i],i*(img_width+margin),height/2, img_width, img_width*ratio);
+      text(smithsonian_data[i].title, i*(img_width+margin),height/2 +img_width*ratio +10 );
   }
 }
 
