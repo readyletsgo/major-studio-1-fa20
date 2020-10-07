@@ -33,6 +33,7 @@ function drawImages() {
   background(0);
   fill(255);
   textSize(8);
+
   for(var i=0; i<smithsonian_data.length; i++){
       image(images[i],i*20,i*20);
       text(smithsonian_data[i].title, i*20,i*20);
