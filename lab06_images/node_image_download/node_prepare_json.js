@@ -5,56 +5,95 @@
  * You can increase the timer if you need to.
  */
 
+// if you are running this locally, you will need to npm install request and dotenv
 // load a default library that lets us read/write to the file system
-var fs = require('fs')
+const fs = require('fs')
 // load a default library that lets us make HTTP requests (like calls to an API)
-var request = require('request')
+const request = require('request')
+// load dotenv for the purpose of storing our api key
+// create a .env file
+// store your api key (ex. API_KEY="abcdefghijk")
+// make sure to put your .env file in your .gitignore
+const dotenv = require('dotenv');
+
+// getting our api key from .env
+dotenv.config();
+const API_KEY = process.env.API_KEY;
 
 // endpoint URL
-const url = 'https://collectionapi.metmuseum.org/public/collection/v1/objects'
-
-// object Ids I want to download
-const myObjectIds = [
-  436524,
- 705155,
- 11922,
- 2032,
- 343052,
- 2019,
- 208554,
- 360837,
- 207869
-]
+const searchBaseURL = "https://api.si.edu/openaccess/api/v1.0/search";
+// our search term
+const search =  `portraits AND unit_code:"FSG" AND online_media_type:"Images"`;
+// url we'll use to make our call
+const url = `${searchBaseURL}?api_key=${API_KEY}&q=${search}`
 
 
-// set up empty Array for us to save results to
-const myArray = []
+// get objects by search term
+function fetchSearchData(url) {
+  request(url, function(error, response, body) {
+    console.error('error:', error); // print the error if one occurred
+    console.log('statusCode:', response && response.statusCode); // print the response status code if a response was received
+    let obj = JSON.parse(body);
+    console.log(obj);
 
-function fetchUrl(objectId){
-    request(url + '/' + objectId, function (error, response, body) {
-      console.error('error:', error); // Print the error if one occurred
-      console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-
-      let obj = JSON.parse(body);
-
-      console.log(obj.primaryImage);
-      let index = myArray.length;
-      myArray[index] = {};
-      myArray[index]["objectID"] = obj.objectID;
-      myArray[index]["title"] = obj.title;
-      myArray[index]["date"] = obj.objectBeginDate;
-      myArray[index]["primaryImage"] = obj.primaryImage;
-      myArray[index]["filename"] = obj.primaryImage.split('/').pop();
-    });
+    // if there are more than 1000 objects, paginate
+    // you can change the pageSize
+    let pageSize = 1000;
+    let numberOfQueries = Math.ceil(obj.response.rowCount / pageSize);
+    console.log(numberOfQueries)
+    for(let i = 0; i < numberOfQueries; i++) {
+      // making sure that our last query calls for the exact number of rows
+      if (i == (numberOfQueries - 1)) {
+        searchAllURL = url + `&start=${i * pageSize}&rows=${obj.response.rowCount - (i * pageSize)}`;
+      } else {
+        searchAllURL = url + `&start=${i * pageSize}&rows=${pageSize}`;
+      }
+      
+      fetchUrl(searchAllURL);
+    }
+  })
 }
 
-// call the function for each element in the myObjectIds array
-myObjectIds.forEach(objectId => {
-    fetchUrl(objectId)
-})
+// set up empty Array for us to save results to
+var myArray = [];
 
-// the function inside the setTimeout saves myResults to a JSON
-// it will automatically run after 2000 ms
+function fetchUrl(searchAllURL){
+  request(searchAllURL, function (error, response, body) {
+    console.error('error:', error); // print the error if one occurred
+    console.log('statusCode:', response && response.statusCode); // print the response status code if a response was received
+
+    let obj = JSON.parse(body);
+
+    // here we are constructing our own object with just the information we need
+    // first we filter out the objects that do not have the information we need (change accordingly)
+    // after the objects are filtered, we map our objects and construct a new object
+    let objects = obj.response.rows.filter(data => {
+      return data.content.descriptiveNonRepeating.online_media.media[0].resources != undefined && data.content.freetext.date != undefined
+    }).map((data) => {
+      let filename = data.content.descriptiveNonRepeating.online_media.media[0].resources[1].url.split('=').pop();
+
+      return { 
+        objectID: data.id,
+        title: data.title,
+        date: data.content.freetext.date[0].content,
+        primaryImage: data.content.descriptiveNonRepeating.online_media.media[0].resources[1].url,
+        filename: filename.includes(".jpg") ? filename : filename + ".jpg" // if the filename we defined above doesn't include .jpg add it at the end
+      }
+    })
+
+    myArray.push(objects);
+    // if there are more objects than the pageSize myArray will look like this: [[...objects], [...objects]]
+    // we use .flat() to flatten out myArray to be a one-dimensional array
+    myArray = myArray.flat();
+
+  });
+}
+
+// calling our function
+fetchSearchData(url);
+
+// // the function inside the setTimeout saves myResults to a JSON
+// // it will automatically run after 5000 ms
 setTimeout(() => {
     fs.writeFileSync('./data.json', JSON.stringify(myArray), 'utf8')
-}, 2000)
+}, 5000)

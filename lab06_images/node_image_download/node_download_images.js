@@ -1,9 +1,10 @@
 // load a default library that lets us read/write to the file system
-let fs = require('fs');
+const fs = require('fs');
+// if you are running this locally, you will need to npm install request
 // load a default library that lets us make HTTP requests (like calls to an API)
-let request = require('request');
+const request = require('request');
 
-// the folder we will write into
+// the folder we will write into, make sure the folder is in your directory
 let folder = "downloads";
 
 // download the image by url, name the file by filename
@@ -11,7 +12,7 @@ function downloadImage(uri, filename, callback){
   request.head(uri, function(err, res, body){
     // console.log('content-type:', res.headers['content-type']);
     // console.log('content-length:', res.headers['content-length']);
-    request(uri).pipe(fs.createWriteStream( folder + "/" + filename)).on('close', callback);
+    request(uri).pipe(fs.createWriteStream(folder + "/" + filename)).on('close', callback);
   });
 };
 
