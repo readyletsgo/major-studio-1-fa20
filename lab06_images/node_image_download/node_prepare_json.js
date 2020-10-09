@@ -23,7 +23,11 @@ const API_KEY = process.env.API_KEY;
 // endpoint URL
 const searchBaseURL = "https://api.si.edu/openaccess/api/v1.0/search";
 // our search term
-const search =  `portraits AND unit_code:"FSG" AND online_media_type:"Images"`;
+// const search =  `portraits AND unit_code:"FSG" AND online_media_type:"Images"`
+
+const search =  `gems AND unit_code:"NMNHMINSCI" AND online_media_type:"Images"`;
+// `gems AND unit_code:"NMNHMINSCI" AND online_media_type:"Images"`
+
 // url we'll use to make our call
 const url = `${searchBaseURL}?api_key=${API_KEY}&q=${search}`
 
@@ -67,20 +71,40 @@ function fetchUrl(searchAllURL){
     // here we are constructing our own object with just the information we need
     // first we filter out the objects that do not have the information we need (change accordingly)
     // after the objects are filtered, we map our objects and construct a new object
+  
     let objects = obj.response.rows.filter(data => {
-      return data.content.descriptiveNonRepeating.online_media.media[0].resources != undefined && data.content.indexedStructured.date != undefined
+      
+      // by default we assume we have complete data
+      dataComplete = true;
+      
+      // Test if images exist
+      if(data.content.descriptiveNonRepeating.online_media ==undefined
+        || data.content.descriptiveNonRepeating.online_media.media ==undefined
+        ||  data.content.descriptiveNonRepeating.online_media.media[0] ==undefined
+        || data.content.descriptiveNonRepeating.online_media.media[0].resources ==undefined
+        || data.content.descriptiveNonRepeating.online_media.media[0].resources[1] ==undefined
+      )dataComplete = false;
+
+      // Test if we have a date value
+      if(data.content.indexedStructured.date ==undefined)dataComplete=false;
+
+
+      return dataComplete;
+    
     }).map((data) => {
+      
       let filename = data.content.descriptiveNonRepeating.online_media.media[0].resources[1].url.split('=').pop();
 
       return { 
         objectID: data.id,
         title: data.title,
-        date: data.content.indexedStructured.date[0],
+        // date: data.content.indexedStructured.date[0],
         primaryImage: data.content.descriptiveNonRepeating.online_media.media[0].resources[1].url,
         filename: filename.includes(".jpg") ? filename : filename + ".jpg" // if the filename we defined above doesn't include .jpg add it at the end
       }
-    })
 
+    })
+  
     myArray.push(objects);
     // if there are more objects than the pageSize myArray will look like this: [[...objects], [...objects]]
     // we use [].concat to flatten out myArray to be a one-dimensional array
