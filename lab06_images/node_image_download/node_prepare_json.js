@@ -23,10 +23,8 @@ const API_KEY = process.env.API_KEY;
 // endpoint URL
 const searchBaseURL = "https://api.si.edu/openaccess/api/v1.0/search";
 // our search term
-// const search =  `portraits AND unit_code:"FSG" AND online_media_type:"Images"`
+const search =  `portraits AND unit_code:"FSG" AND online_media_type:"Images"`
 
-const search =  `gems AND unit_code:"NMNHMINSCI" AND online_media_type:"Images"`;
-// `gems AND unit_code:"NMNHMINSCI" AND online_media_type:"Images"`
 
 // url we'll use to make our call
 const url = `${searchBaseURL}?api_key=${API_KEY}&q=${search}`
