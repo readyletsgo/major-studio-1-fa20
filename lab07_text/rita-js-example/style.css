@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: auto;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: #165472;
+  padding: 2rem;
+  color: #fff;
+  letter-spacing: 0.25pt;
+}
+
+#app {
+  margin-top: 15px;
+}
+
+#myInput {
+  width: 200px;
+}
