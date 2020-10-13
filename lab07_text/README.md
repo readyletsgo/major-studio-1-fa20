@@ -8,3 +8,4 @@
 #### Video Tutorials:
 [JavaScript String Object - Programming with Text](https://www.youtube.com/watch?v=DcoAjEZYies)  
 [Regular Expressions: split() - Programming with Text](https://www.youtube.com/watch?v=fdyqutmcI2Q)
+[2.4: Regular Expressions: Capturing Groups - Programming with Text](https://www.youtube.com/watch?v=c9HbsUSWilw)
