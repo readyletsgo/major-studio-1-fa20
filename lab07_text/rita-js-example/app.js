@@ -43,3 +43,9 @@ function processRita(input) {
     .attr('class', 'rita-text')
     .text(output);
 }
+
+function inputKey(ele) {
+  if(event.key === "Enter") {
+      processRita(ele.value);      
+  }
+}
