@@ -25,7 +25,7 @@
 
 ### Regular expressions
 [Eloquent Javascript: Regular Expressions](https://eloquentjavascript.net/09_regexp.html)  
-[2.4: Regular Expressions: Capturing Groups - Programming with Text](https://www.youtube.com/watch?v=c9HbsUSWilw)  
+[Regular Expressions in Javascript](https://shiffman.net/a2z/regex/)  
 
 
 

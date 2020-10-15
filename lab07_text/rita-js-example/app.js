@@ -24,18 +24,18 @@ function processRita(input) {
   var pos = rs.pos();
   console.log(pos);
   
-  // change certain part-of-speech tags
-  let output = '';
-  words.forEach((word, i) => {
-    // use regular expression to replace all nouns with random words pulled from RiTa
-    if(/nn.*/.test(pos[i])) {
-      // if the word is a noun replace the word with a new noun:
-      output += RiTa.randomWord(pos[i]) + ' ';
-    } else {
-      // if not, return the original word:
-      output += word + ' ';
-    }
-  })
+  // // change certain part-of-speech tags
+  // let output = '';
+  // words.forEach((word, i) => {
+  //   // use regular expression to replace all nouns with random words pulled from RiTa
+  //   if(/nn.*/.test(pos[i])) {
+  //     // if the word is a noun replace the word with a new noun:
+  //     output += RiTa.randomWord(pos[i]) + ' ';
+  //   } else {
+  //     // if not, return the original word:
+  //     output += word + ' ';
+  //   }
+  // })
 
   // adding p elements with d3
   d3.select('#app')
