@@ -34,7 +34,6 @@ function processText(input) {
    // count how many times each letter appears within the text and create a visualization of it
 
 
-
 }
 
 
