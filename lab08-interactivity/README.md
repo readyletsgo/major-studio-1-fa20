@@ -6,6 +6,9 @@ This lab demonstrates filter, select, and hover behavior with a simple D3 visual
 
 ![aass](./architecture.jpg)
 
+### Built versions
+- https://readyletsgo.github.io/major-studio-1-fa20/lab08-interactivity/lab08a/   
+- https://readyletsgo.github.io/major-studio-1-fa20/lab08-interactivity/lab08b/      
 
 
 ### JS Resources
