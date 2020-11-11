@@ -15,6 +15,9 @@ This lab demonstrates filter, select, and hover behavior with a simple D3 visual
 - Discuss code for lab08 together  
 - In groups, first get an overview of everything
 - Do a close read of each function dataLoad(), setState(), onCheckboxChange(), initializeLayout(), draw()  
+  - What does this function do?
+  - Which variables does this function use?
+  - Where is this function called?
 - Describe to the group
 - After understanding lab08a, explore lab08b
 
