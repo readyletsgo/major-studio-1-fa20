@@ -11,6 +11,13 @@ This lab demonstrates filter, select, and hover behavior with a simple D3 visual
 - https://readyletsgo.github.io/major-studio-1-fa20/lab08-interactivity/lab08b/      
 
 
+### Activity
+- Discuss code for lab08 together  
+- In groups, first get an overview of everything
+- Do a close read of each function dataLoad(), setState(), onCheckboxChange(), initializeLayout(), draw()  
+- Describe to the group
+- After understanding lab08a, explore lab08b
+
 ### JS Resources
 
 - Array.map() https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
