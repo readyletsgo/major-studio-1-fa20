@@ -1,25 +1,15 @@
 // using constants makes it easy to update when values change
 // many editors also autocomplete variable names
 // by convention, constants in JS have UPPERCASE names
-const CONSTANTS = {
-  CLASS: "class",
-  PETAL_LENGTH: "petallength",
-  PETAL_WIDTH: "petalwidth",
-  SEPAL_LENGTH: "sepallength",
-  SEPAL_WIDTH: "sepalwidth",
-  TOOLTIP_WIDTH: 150,
-  TOOLTIP_HEIGHT: 20,
-};
 
-const {
-  CLASS,
-  PETAL_LENGTH,
-  PETAL_WIDTH,
-  SEPAL_LENGTH,
-  SEPAL_WIDTH,
-  TOOLTIP_HEIGHT,
-  TOOLTIP_WIDTH,
-} = CONSTANTS;
+const CLASS = "class";
+const PETAL_LENGTH = "petallength";
+const PETAL_WIDTH =  "petalwidth";
+const SEPAL_LENGTH = "sepallength";
+const SEPAL_WIDTH = "sepalwidth";
+const TOOLTIP_WIDTH =  150;
+const TOOLTIP_HEIGHT =  20;
+
 
 // we can set up our state schema before we have any data
 let state = {
@@ -49,8 +39,11 @@ async function dataLoad() {
   const data = await d3.json("./iris_json.json");
 
   // once data is on state, we can access it from any other function because state is a global variable
+  
   // we also populate our checkboxes with values from the data
   const checkboxValues = Array.from(new Set(data.map(d => d[CLASS])));
+
+  // copy the data into the state variable, add a unique ID for each object and add the filters
   setState({
     data: data.map((d, i) => ({
       ...d,
@@ -65,7 +58,7 @@ async function dataLoad() {
 
 // whenever state changes, update the state variable, then redraw the viz
 function setState(nextState) {
-  console.log("state updated");
+  // console.log("state updated");
   // using Object.assign keeps the state *immutable*
   state = Object.assign({}, state, nextState);
   draw();
