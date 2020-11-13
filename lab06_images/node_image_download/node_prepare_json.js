@@ -79,8 +79,8 @@ function fetchUrl(searchAllURL){
       if(data.content.descriptiveNonRepeating.online_media ==undefined
         || data.content.descriptiveNonRepeating.online_media.media ==undefined
         ||  data.content.descriptiveNonRepeating.online_media.media[0] ==undefined
-        || data.content.descriptiveNonRepeating.online_media.media[0].resources ==undefined
-        || data.content.descriptiveNonRepeating.online_media.media[0].resources[1] ==undefined
+        || data.content.descriptiveNonRepeating.online_media.media[0].content ==undefined
+        // || data.content.descriptiveNonRepeating.online_media.media[0].resources[1] ==undefined
       )dataComplete = false;
 
       // Test if we have a date value
@@ -91,13 +91,19 @@ function fetchUrl(searchAllURL){
     
     }).map((data) => {
       
-      let filename = data.content.descriptiveNonRepeating.online_media.media[0].resources[1].url.split('=').pop();
+      let filename = data.content.descriptiveNonRepeating.online_media.media[0].content.split('=').pop();
+      
+      // change the size of the images you are downloading
+      // imgSizeParam can be max or max_w to force width or max_h to force height
+      // primary image url should be the image delivery service url ex) https://ids.si.edu/ids/deliveryService?id=FS-5461_07
+      let imgSizeParam = "max";
+      let imgSizeValue = 300;
 
       return { 
         objectID: data.id,
         title: data.title,
         // date: data.content.indexedStructured.date[0],
-        primaryImage: data.content.descriptiveNonRepeating.online_media.media[0].resources[1].url,
+        primaryImage: data.content.descriptiveNonRepeating.online_media.media[0].content + `&${imgSizeParam}=${imgSizeValue}`,
         filename: filename.includes(".jpg") ? filename : filename + ".jpg" // if the filename we defined above doesn't include .jpg add it at the end
       }
 
