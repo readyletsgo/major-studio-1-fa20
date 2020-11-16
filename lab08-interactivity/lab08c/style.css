@@ -1,0 +1,62 @@
+.interactive {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.interactive svg {
+  grid-column: 2 / 3;
+  grid-row: 1;
+}
+
+.interactive svg rect.highlight {
+  stroke-width: 1px;
+  stroke: white;
+}
+
+.interactive .left-menu {
+  grid-column: 1 / 2;
+  grid-row: 1;
+}
+
+.interactive .filters::before {
+  content: "Filter data by species:";
+  display: block;
+}
+
+.interactive .right-menu {
+  grid-column: 3 / 4;
+  grid-row: 1;
+}
+
+.interactive .right-menu form::before {
+  content: "Size bars by:";
+  display: block;
+}
+
+.interactive .right-menu .legend {
+  margin-top: 20px;
+}
+
+.interactive .right-menu .legend .legend-row {
+  height: 15px;
+}
+.interactive .right-menu .legend .legend-row .box {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+}
+
+.interactive .right-menu .legend .legend-row .legend-label {
+  display: inline-block;
+}
+
+.interactive .tooltip.visible {
+  visibility: visible;
+}
+
+.interactive .tooltip:not(.visible) {
+  visibility: hidden;
+}
