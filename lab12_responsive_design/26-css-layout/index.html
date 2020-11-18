@@ -1,0 +1,73 @@
+<html>
+	<head>
+	    <title>Css layout</title>
+	<!-- CSS STYLES GO HERE -->
+    <style>
+	  body {
+                background-color: #dddddd; 
+                font-size: 30px;
+                padding:0px;
+                margin:0px;
+            }
+
+        #centered{
+            margin: auto;
+            width:500px;
+            background-color: yellow;
+            height:500px;
+        }
+
+        #centered img{
+            position:relative;
+            top:500px;
+            left:50px;
+        }
+
+        #bottomRight{
+            bottom:0px;
+            float:right;
+            width:200px;
+            height:200px;
+            background-color: red;
+            padding:0px;
+        }
+        #topLeftFixed{
+            position:fixed;
+            top:0px;
+            left:0px;
+            width:200px;
+            /*height:200px;*/
+            background-color: blue;
+            padding:20px;
+            margin:20px;
+        }
+        .theme{
+            background-color: red;
+        }
+
+	</style>
+    <!-- JAVASCRIPT SCRIPTS GO HERE -->
+  <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+<script language="javascript" src="libraries/p5.dom.js"></script>
+  <script language="javascript" type="text/javascript" src="sketch.js"></script>  
+	</head>
+    <!-- THIS IS WHERE HTML BODY STARTS -->
+	<body>
+        
+        <div id="centered">
+            This is vertically centered and long.
+                        <img src="cat.jpg">
+        </div>
+        <div id="topLeftFixed">
+            This is top left fixed
+            If I write more in here <br> I think it will get larger 
+            <div class="theme">text one two</div>
+            <div>text one two</div>
+        </div>
+
+        <div id="bottomRight">
+            This is bottom right
+        </div>
+
+	</body>
+</html>

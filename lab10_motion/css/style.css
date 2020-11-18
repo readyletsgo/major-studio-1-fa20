@@ -1,0 +1,84 @@
+.interactive {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  transition: top 0.5s, left 0.5s, right 0.5s, bottom 0.5s, width 0.5s,
+    height 0.5s;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.interactive-0 {
+  background-color: #0ff;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  animation-name: move-over-0;
+  animation-delay: 0s;
+}
+.interactive-1 {
+  background-color: #00f;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  animation-name: move-over-1;
+  animation-delay: 2.5s;
+}
+.interactive-2 {
+  background-color: #0f0;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  animation-name: move-over-2;
+  animation-delay: 5s;
+}
+.interactive-3 {
+  background-color: #f0f;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  animation-name: move-over-3;
+  animation-delay: 7.5s;
+}
+
+.interactive:hover {
+  width: 75px;
+  height: 75px;
+}
+
+@keyframes move-over-0 {
+  from {
+    left: 0px;
+  }
+  to {
+    left: calc(100% - 50px);
+  }
+}
+
+@keyframes move-over-1 {
+  from {
+    top: 0px;
+  }
+  to {
+    top: calc(100% - 50px);
+  }
+}
+
+@keyframes move-over-2 {
+  from {
+    right: 0px;
+  }
+  to {
+    right: calc(100% - 50px);
+  }
+}
+
+@keyframes move-over-3 {
+  from {
+    bottom: 0px;
+  }
+  to {
+    bottom: calc(100% - 50px);
+  }
+}

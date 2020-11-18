@@ -1,0 +1,62 @@
+   body {
+            margin:0;
+            font-family: sans-serif;
+            font-weight: normal;            
+            }
+        #menu{
+            background-color: #060811;
+            opacity: 0.9;
+            /*this places the menu ABOVE the rest of the page*/
+            z-index:1; 
+            font-size: 30px;
+            padding:30px;
+
+            /*a full screen fixed overlay:; */
+            overflow-x: hidden;
+            width:100%;
+            height:100%;
+            position:fixed;
+
+            /*in the beginning the menu is hidden*/
+            display:none;
+        }
+        .btn{
+            color:white;
+            text-decoration: none;
+            cursor:hand;
+        }
+        .btn:hover{
+            text-decoration: underline;
+            cursor: pointer; 
+        }
+         #canvasContainer{
+            width: 800px;
+            height: 660px;
+        }
+
+        #main{
+            width: 800px;
+            height: 640px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -320px 0 0 -400px;            
+            text-align: center;
+
+        }
+        /*this is the button that makes the menu show up*/
+        #menuBtn a{
+            margin:auto;
+            width:140px;
+            background-color: #AAA; 
+            padding:10px;
+            color:white;
+            color:white;
+            text-decoration: none;
+            background-color: #AAA;
+        }
+        #menuBtn a:hover{
+            background-color: #999;
+            color:white;
+               text-decoration: none;
+        }

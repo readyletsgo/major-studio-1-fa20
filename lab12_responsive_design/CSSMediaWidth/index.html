@@ -1,0 +1,36 @@
+<html>
+<head>
+    <style>
+    body {
+        background-color: green;
+        h1 {
+            font-family: serif;
+        }
+
+    }    
+    @media (max-width: 1024px) and (min-width: 480px) {
+        body {
+            background-color: white;
+        }
+        h1 {
+            font-family: sans-serif;
+        }
+    }
+    @media (min-width: 1024px){
+        body {
+            background-color: red;
+        }
+        h1 {
+            font-family: sans-serif;
+            text-transform: uppercase;
+        }
+    }
+
+    </style>
+</head>
+<body>
+
+    <h1>A browser with less than 480px with will change the body background-color to 'green'</h1>
+
+</body>
+</html>
