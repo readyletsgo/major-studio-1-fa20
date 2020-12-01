@@ -1,0 +1,33 @@
+body {
+  color: cadetblue;
+  font-family: Avenir, sans-serif;
+}
+
+/* svg {
+  border: 1px solid #bbbbbb;
+} */
+
+.x .domain {
+  stroke: none;
+}
+
+.y .domain {
+  stroke: none;
+}
+
+.y line {
+  stroke: #777777;
+  stroke-dasharray: 2;
+}
+
+.tooltip {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none; 
+  background: #eee;
+  max-width: 200px;
+}
+
+.y .tick:first-child {
+  display: none;
+}
